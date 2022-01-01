@@ -68,6 +68,7 @@ This project consists of three technical deliverables as follows:
 The accuracy and loss of the three neural network models did not change significantly despite trying different activation functions for the hidden layers. The original model has the best result with accuracy of 0.537 and a loss of 0.903.
 
 #### Original Model nn with training data
+![cumulative return plot that shows the actual returns vs  the strategy returns](https://user-images.githubusercontent.com/88909565/147861181-08e0c682-d6a7-4ab4-bdf1-5fedf8714181.png)
 
 
 ####  Review of the classification report to evaluate the model using the SVC model predictions and testing data
@@ -88,6 +89,7 @@ weighted avg       0.50      0.55      0.43      4092
 Save a PNG image of the cumulative product of the actual returns vs. the strategy returns for this updated trading algorithm, and write your conclusions in your README.md file.
 
 
+![actual_vs_strategy1_cum_ plot](https://user-images.githubusercontent.com/88909565/147861193-2663773f-b1d2-4452-b059-8375f4528487.png)
 
 # Use a classification report to evaluate the model using the predictions and testing data
 # Logistic_regression classification report
