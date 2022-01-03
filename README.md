@@ -68,14 +68,14 @@ This project consists of three technical deliverables as follows:
 ## Results
 
 
-#### Original Model nn with training data
+### Original Model nn with training data
 ![cumulative return plot that shows the actual returns vs  the strategy returns](https://user-images.githubusercontent.com/88909565/147861181-08e0c682-d6a7-4ab4-bdf1-5fedf8714181.png)
 
 The SVM model performed well from the beginning of the period until end of 2019. That’s when the actual and predicted returns start to differ. To truly find out how well this model works, the model was fitted with a different sets of pricing data, have it make predictions, backtest it, and then evaluate it against the actual performance of the asset with that trading strategy.
 
 
 
-####  Review of the classification report to evaluate the model using the SVC model predictions and testing data
+###  Review of the classification report to evaluate the model using the SVC model predictions and testing data
 # svm_testing classification report
 print(svm_testing_report)
               precision    recall  f1-score   support
@@ -87,15 +87,15 @@ print(svm_testing_report)
    macro avg       0.49      0.50      0.39      4092
 weighted avg       0.50      0.55      0.43      4092
 
-#### Backtest the new model to evaluate its performance.
+### Backtest the new model to evaluate its performance.
 Save a PNG image of the cumulative product of the actual returns vs. the strategy returns for this updated trading algorithm, and write your conclusions in your README.md file.
 
 ![actual_vs_strategy1_cum_ plot](https://user-images.githubusercontent.com/88909565/147861193-2663773f-b1d2-4452-b059-8375f4528487.png)
 
 Backtesting the SMA long-short trading strategy using the SVM model, the SVM model made trading decisions that strongly outperformed the actual returns in some market scenarios, as illustrated by the steep rise in the trading_algorithm_returns plot line. However, sometimes the SVM model also made decisions that underperformed relative to the actual returns, as illustrated by the steep decline in the trading_algorithm_returns plot line in Q42018 & Q1 2019. Overall, the SVM model's trading decisions, though more volatile, produced a higher cumulative return value than the original trading strategy's actual returns.
 
-# Use a classification report to evaluate the model using the predictions and testing data
-# Logistic_regression classification report
+## Use a classification report to evaluate the model using the predictions and testing data
+### Logistic_regression classification report
               precision    recall  f1-score   support
 
         -1.0       0.44      0.33      0.38      1804
@@ -106,28 +106,28 @@ Backtesting the SMA long-short trading strategy using the SVM model, the SVM mod
 weighted avg       0.51      0.52      0.51      4092
 
 
-# Answer the following questions: 
-## 1. Did this new model perform better or worse than the provided baseline model? 
+## Answer the following questions: 
+### 1. Did this new model perform better or worse than the provided baseline model? 
 
 For the classification report using the SVC model using the original training data, the precision is 0.43 for the −1 class and 0.56 for the 1 class. The recall is 0.04 for the −1 class and 0.96 for the 1 class.
 For the classification report using the Backtest new model prediction and testing data the precision is 0.44 for the −1 class and 0.56 for the 1 class. The recall is 0.33 for the −1 class and 0.66 for the 1 class.
 ## 2. Did this new model perform better or worse than your tuned trading algorithm?
 We can conclude that the precision is similar for the training data and the testing data. But, the recall is much lower for the −1 class of the training data (0.04 vs. 0.33) and much higher for the 1 class (0.96 vs. 0.66). Overall, the accuracy score for the recall is only slightly better for the training data, at 0.55, than for the testing data, at 0.52.
 
-# Tune the Baseline Trading Algorithm
+## Tune the Baseline Trading Algorithm
 
 ### Step 1: Tune the training algorithm by adjusting the size of the training dataset. 
 Answer the following question: What impact resulted from increasing or decreasing the training window?
-The higher the size of the training window the more the departure between the actual and the predicted returns. The precision, recall and accuracy improves with shorter size of windopw.
+The higher the size of the training window the more the departure between the actual and the predicted returns. The precision, recall and accuracy improves with shorter size of window.
 
 ### Step 2: Tune the trading algorithm by adjusting the SMA input features. 
 Answer the following question: What impact resulted from increasing or decreasing either or both of the SMA windows?
 
-# Set the short window and long window
+### Set the short window and long window
 short_window = 5
 long_window = 80
 
-# svm_testing_report
+### svm_testing_report
                   precision    recall  f1-score   support
 
         -1.0       0.39      0.03      0.06      1806
@@ -135,7 +135,7 @@ long_window = 80
 
     accuracy                           0.55      4095
 
-# logistic_regression_report
+### logistic_regression_report
                   precision    recall  f1-score   support
 
         -1.0       0.43      0.27      0.33      1806
@@ -143,11 +143,11 @@ long_window = 80
 
     accuracy                           0.52      4095
 
-# Set the short window and long window
+### Set the short window and long window
 short_window = 4
 long_window = 50
 
-# svm_testing_report
+### svm_testing_report
                   precision    recall  f1-score   support
 
         -1.0       0.42      0.13      0.19      1826
@@ -155,7 +155,7 @@ long_window = 50
 
     accuracy                           0.54      4147
 
-# logistic_regression_report
+### logistic_regression_report
               precision    recall  f1-score   support
 
         -1.0       0.44      0.21      0.28      1826
@@ -163,11 +163,11 @@ long_window = 50
 
     accuracy                           0.53      4147
 
-# Set the short window and long window
+### Set the short window and long window
 short_window = 10
 long_window = 120
 
-# svm_testing_report
+### svm_testing_report
                 precision    recall  f1-score   support
 
         -1.0       0.46      0.02      0.04      1793
@@ -175,7 +175,7 @@ long_window = 120
 
     accuracy                           0.56      4077
 
-# logistic_regression_report
+### logistic_regression_report
              precision    recall  f1-score   support
 
         -1.0       0.44      0.54      0.48      1793
