@@ -52,67 +52,8 @@ Answer the following question: What impact resulted from increasing or decreasin
 Step 3: Choose the set of parameters that best improved the trading algorithm returns.
 Save a PNG image of the cumulative product of the actual returns vs. the strategy returns, and document your conclusion in your README.md file.
 
-
-
-## Deliverables
-This project consists of three technical deliverables as follows:
-• Preprocess data for use on a neural network model.
-• Use the model-fit-predict pattern to compile and evaluate a binary classification model using a neural network.
-• Optimize the neural network model.
-. After finishing your models, display the accuracy scores achieved by each model, and compare the results. 
-. Save each models as an HDF5 file, labeled as:
-   Original model as -  AlphabetSoup.h5
-   Alernative model 1 as - A1_AlphabetSoup.h5
-   Alternative model 2 as - A2_AlphabetSoup.h5
    
 ## Results
-
-
-### Original Model nn with training data
-![cumulative return plot that shows the actual returns vs  the strategy returns](https://user-images.githubusercontent.com/88909565/147861181-08e0c682-d6a7-4ab4-bdf1-5fedf8714181.png)
-
-The SVM model performed well from the beginning of the period until end of 2019. That’s when the actual and predicted returns start to differ. To truly find out how well this model works, the model was fitted with a different sets of pricing data, have it make predictions, backtest it, and then evaluate it against the actual performance of the asset with that trading strategy.
-
-
-
-###  Review of the classification report to evaluate the model using the SVC model predictions and testing data
-# svm_testing classification report
-print(svm_testing_report)
-              precision    recall  f1-score   support
-
-        -1.0       0.43      0.04      0.07      1804
-         1.0       0.56      0.96      0.71      2288
-
-    accuracy                           0.55      4092
-   macro avg       0.49      0.50      0.39      4092
-weighted avg       0.50      0.55      0.43      4092
-
-### Backtest the new model to evaluate its performance.
-Save a PNG image of the cumulative product of the actual returns vs. the strategy returns for this updated trading algorithm, and write your conclusions in your README.md file.
-
-![actual_vs_strategy1_cum_ plot](https://user-images.githubusercontent.com/88909565/147861193-2663773f-b1d2-4452-b059-8375f4528487.png)
-
-Backtesting the SMA long-short trading strategy using the SVM model, the SVM model made trading decisions that strongly outperformed the actual returns in some market scenarios, as illustrated by the steep rise in the trading_algorithm_returns plot line. However, sometimes the SVM model also made decisions that underperformed relative to the actual returns, as illustrated by the steep decline in the trading_algorithm_returns plot line in Q42018 & Q1 2019. Overall, the SVM model's trading decisions, though more volatile, produced a higher cumulative return value than the original trading strategy's actual returns.
-
-## Use a classification report to evaluate the model using the predictions and testing data
-### Logistic_regression classification report
-              precision    recall  f1-score   support
-
-        -1.0       0.44      0.33      0.38      1804
-         1.0       0.56      0.66      0.61      2288
-
-    accuracy                           0.52      4092
-   macro avg       0.50      0.50      0.49      4092
-weighted avg       0.51      0.52      0.51      4092
-
-
-## Answer the following questions: 
-### 1. Did this new model perform better or worse than the provided baseline model? 
-
-For the classification report using the SVC model using the original training data, the precision is 0.43 for the −1 class and 0.56 for the 1 class. The recall is 0.04 for the −1 class and 0.96 for the 1 class.
-For the classification report using the Backtest new model prediction and testing data the precision is 0.44 for the −1 class and 0.56 for the 1 class. The recall is 0.33 for the −1 class and 0.66 for the 1 class.
-## 2. Did this new model perform better or worse than your tuned trading algorithm?
-We can conclude that the precision is similar for the training data and the testing data. But, the recall is much lower for the −1 class of the training data (0.04 vs. 0.33) and much higher for the 1 class (0.96 vs. 0.66). Overall, the accuracy score for the recall is only slightly better for the training data, at 0.55, than for the testing data, at 0.52.
 
 ## Tune the Baseline Trading Algorithm
 
@@ -184,3 +125,50 @@ long_window = 120
     accuracy                           0.49      4077
 
    Considering the classification reports of both the SVM and the logistics regression with the short and long windows slices above, we can conclude that the precision, recall and accuracy improves or deterioriates depending on the size of the short or long windows. 
+
+## Step 3: Choose the set of parameters that best improved the trading algorithm returns.
+Save a PNG image of the cumulative product of the actual returns vs. the strategy returns, and document your conclusion in your README.md file.
+
+   ### Original Model nn with training data
+![cumulative return plot that shows the actual returns vs  the strategy returns](https://user-images.githubusercontent.com/88909565/147861181-08e0c682-d6a7-4ab4-bdf1-5fedf8714181.png)
+
+The SVM model performed well from the beginning of the period until end of 2019. That’s when the actual and predicted returns start to differ. To truly find out how well this model works, the model was fitted with a different sets of pricing data, have it make predictions, backtest it, and then evaluate it against the actual performance of the asset with that trading strategy.
+
+###  Review of the classification report to evaluate the model using the SVC model predictions and testing data
+# svm_testing classification report
+print(svm_testing_report)
+              precision    recall  f1-score   support
+
+        -1.0       0.43      0.04      0.07      1804
+         1.0       0.56      0.96      0.71      2288
+
+    accuracy                           0.55      4092
+   macro avg       0.49      0.50      0.39      4092
+weighted avg       0.50      0.55      0.43      4092
+
+### Backtest the new model to evaluate its performance.
+Save a PNG image of the cumulative product of the actual returns vs. the strategy returns for this updated trading algorithm, and write your conclusions in your README.md file.
+
+![actual_vs_strategy1_cum_ plot](https://user-images.githubusercontent.com/88909565/147861193-2663773f-b1d2-4452-b059-8375f4528487.png)
+
+Backtesting the SMA long-short trading strategy using the SVM model, the SVM model made trading decisions that strongly outperformed the actual returns in some market scenarios, as illustrated by the steep rise in the trading_algorithm_returns plot line. However, sometimes the SVM model also made decisions that underperformed relative to the actual returns, as illustrated by the steep decline in the trading_algorithm_returns plot line in Q42018 & Q1 2019. Overall, the SVM model's trading decisions, though more volatile, produced a higher cumulative return value than the original trading strategy's actual returns.
+
+## Use a classification report to evaluate the model using the predictions and testing data
+### Logistic_regression classification report
+              precision    recall  f1-score   support
+
+        -1.0       0.44      0.33      0.38      1804
+         1.0       0.56      0.66      0.61      2288
+
+    accuracy                           0.52      4092
+   macro avg       0.50      0.50      0.49      4092
+weighted avg       0.51      0.52      0.51      4092
+
+
+## Answer the following questions: 
+### 1. Did this new model perform better or worse than the provided baseline model? 
+
+For the classification report using the SVC model using the original training data, the precision is 0.43 for the −1 class and 0.56 for the 1 class. The recall is 0.04 for the −1 class and 0.96 for the 1 class.
+For the classification report using the Backtest new model prediction and testing data the precision is 0.44 for the −1 class and 0.56 for the 1 class. The recall is 0.33 for the −1 class and 0.66 for the 1 class.
+## 2. Did this new model perform better or worse than your tuned trading algorithm?
+We can conclude that the precision is similar for the training data and the testing data. But, the recall is much lower for the −1 class of the training data (0.04 vs. 0.33) and much higher for the 1 class (0.96 vs. 0.66). Overall, the accuracy score for the recall is only slightly better for the training data, at 0.55, than for the testing data, at 0.52.
