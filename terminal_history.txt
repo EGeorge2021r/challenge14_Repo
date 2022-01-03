@@ -1,0 +1,50 @@
+   97  cd OneDrive
+   98  cd desktop
+   99  cd Fintech\ workspace/
+  100  cd _Mar
+  101  cd 02_Listing_Assets/
+  102  cd Unsolved/
+  103  python listing_assets.py
+  104  python listing_assets.py
+  105  python actors_python.py
+  106  python The_401k_shuffle.py
+  107  ls
+  108  pwd
+  109  cd fintech_workspace
+  110  ~
+  111  coda deactivate
+  112  conda deactivate
+  113  ~
+  114  ~
+  115  pwd
+  116  cd one
+  117  exit
+  118  cd onedrive/
+  119  cd Desktop/
+  120  cd Fintech/
+  121  conda activate pyviz
+  122  code .
+  123  git add -A
+  124  cd challenge14_Repo/
+  125  git add -A
+  126  git commit " README update and image files"
+  127  git commit -m "README update and image file"
+  128  git push origin main
+  129  git add -A
+  130  git commit -m "Add images to README file"
+  131  git pull origin main
+  132  git add -A
+  133  git commit -m "Updating README file and adding a new code file for Analusis and Optimization"
+  134  git push origin main
+  135  git add -A
+  136  git commit -m "Tuning the training bot and updating README file"
+  137  git push origin main
+  138  git add -A
+  139  git commit -m " Minor edit on README file"
+  140  git push origin main
+  141  git add -A
+  142  git commit -m "format README FILE"
+  143  git push origin main
+  144  git add -A
+  145  git commit -m "history 50 >terminal_history.txt"
+  146  history 50 >terminal_history.txt
