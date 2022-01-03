@@ -113,3 +113,74 @@ For the classification report using the SVC model using the original training da
 For the classification report using the Backtest new model prediction and testing data the precision is 0.44 for the −1 class and 0.56 for the 1 class. The recall is 0.33 for the −1 class and 0.66 for the 1 class.
 ## 2. Did this new model perform better or worse than your tuned trading algorithm?
 We can conclude that the precision is similar for the training data and the testing data. But, the recall is much lower for the −1 class of the training data (0.04 vs. 0.33) and much higher for the 1 class (0.96 vs. 0.66). Overall, the accuracy score for the recall is only slightly better for the training data, at 0.55, than for the testing data, at 0.52.
+
+# Tune the Baseline Trading Algorithm
+
+### Step 1: Tune the training algorithm by adjusting the size of the training dataset. 
+Answer the following question: What impact resulted from increasing or decreasing the training window?
+The higher the size of the training window the more the departure between the actual and the predicted returns. The precision, recall and accuracy improves with shorter size of windopw.
+
+### Step 2: Tune the trading algorithm by adjusting the SMA input features. 
+Answer the following question: What impact resulted from increasing or decreasing either or both of the SMA windows?
+
+# Set the short window and long window
+short_window = 5
+long_window = 80
+
+# svm_testing_report
+                  precision    recall  f1-score   support
+
+        -1.0       0.39      0.03      0.06      1806
+         1.0       0.56      0.96      0.70      2289
+
+    accuracy                           0.55      4095
+
+# logistic_regression_report
+                  precision    recall  f1-score   support
+
+        -1.0       0.43      0.27      0.33      1806
+         1.0       0.56      0.72      0.63      2289
+
+    accuracy                           0.52      4095
+
+# Set the short window and long window
+short_window = 4
+long_window = 50
+
+# svm_testing_report
+                  precision    recall  f1-score   support
+
+        -1.0       0.42      0.13      0.19      1826
+         1.0       0.56      0.86      0.68      2321
+
+    accuracy                           0.54      4147
+
+# logistic_regression_report
+              precision    recall  f1-score   support
+
+        -1.0       0.44      0.21      0.28      1826
+         1.0       0.56      0.79      0.66      2321
+
+    accuracy                           0.53      4147
+
+# Set the short window and long window
+short_window = 10
+long_window = 120
+
+# svm_testing_report
+                precision    recall  f1-score   support
+
+        -1.0       0.46      0.02      0.04      1793
+         1.0       0.56      0.98      0.71      2284
+
+    accuracy                           0.56      4077
+
+# logistic_regression_report
+             precision    recall  f1-score   support
+
+        -1.0       0.44      0.54      0.48      1793
+         1.0       0.55      0.45      0.50      2284
+
+    accuracy                           0.49      4077
+
+   Considering the classification reports of both the SVM and the logistics regression with the short and long windows slices above, we can conclude that the precision, recall and accuracy improves or deterioriates depending on the size of the short or long windows. 
